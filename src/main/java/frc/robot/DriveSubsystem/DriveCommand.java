@@ -12,7 +12,7 @@ import frc.robot.Robot;
 
 public class DriveCommand extends Command {
   public DriveCommand() {
-    requires(Robot.drivesys);
+    requires(Robot.driveSys);
   }
 
   // Called just before this Command runs the first time
@@ -23,8 +23,8 @@ public class DriveCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.drivesys.setLeftMotors(Robot.leftJoystick.getRawAxis(1));
-    Robot.drivesys.setRightMotors(Robot.rightJoystick.getRawAxis(1));
+    Robot.driveSys.setLeftMotors(Robot.leftJoystick.getRawAxis(1));
+    Robot.driveSys.setRightMotors(Robot.rightJoystick.getRawAxis(1));
   }
 
   // Make this return true when this Command no longer needs to run execute()
