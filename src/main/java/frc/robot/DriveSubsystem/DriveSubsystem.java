@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.input.HumanInput;
 
 public class DriveSubsystem extends Subsystem {
   private TalonSRX right0;
@@ -77,6 +78,18 @@ public class DriveSubsystem extends Subsystem {
     default:
       System.out.println("Something went wrong");
     }
+  }
+
+  public double getLeftJoysick() {
+    if (HumanInput.leftJoystick.getRawAxis(1) > .1)
+      return HumanInput.leftJoystick.getRawAxis(1);
+    return 0;
+  }
+
+  public double getRightJoysick() {
+    if (HumanInput.rightJoystick.getRawAxis(1) > .1)
+      return HumanInput.rightJoystick.getRawAxis(1);
+    return 0;
   }
 
   @Override

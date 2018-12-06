@@ -8,7 +8,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.DriveSubsystem.DriveSubsystem;
 
@@ -20,8 +19,6 @@ import frc.robot.DriveSubsystem.DriveSubsystem;
  * project.
  */
 public class Robot extends IterativeRobot {
-  public static Joystick rightJoystick;
-  public static Joystick leftJoystick;
   public static DriveSubsystem driveSys;
 
   /**
@@ -30,8 +27,6 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void robotInit() {
-    leftJoystick = new Joystick(0);
-    rightJoystick = new Joystick(1);
     driveSys = new DriveSubsystem();
     driveSys.initDefaultCommand();
 
@@ -88,5 +83,4 @@ public class Robot extends IterativeRobot {
   @Override
   public void testPeriodic() {
   }
-
 }
