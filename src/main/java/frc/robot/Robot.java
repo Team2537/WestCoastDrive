@@ -29,7 +29,6 @@ public class Robot extends IterativeRobot {
   public void robotInit() {
     driveSys = new DriveSubsystem();
     driveSys.initDefaultCommand();
-
   }
 
   /**
@@ -59,7 +58,6 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void autonomousInit() {
-    // driveSys.motorTest(5);
   }
 
   /**

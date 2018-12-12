@@ -47,6 +47,7 @@ public class DriveSubsystem extends Subsystem {
     right0.set(controlMode, -speed);
     right1.set(controlMode, -speed);
     right2.set(controlMode, -speed);
+    // reverse so both sides run in same direction
   }
 
   /**
@@ -81,14 +82,14 @@ public class DriveSubsystem extends Subsystem {
   }
 
   public double getLeftJoysick() {
-    if (HumanInput.leftJoystick.getRawAxis(1) > .1)
-      return HumanInput.leftJoystick.getRawAxis(1);
+    if (Math.abs(HumanInput.leftJoystick.getRawAxis(1)) > .1)
+      return HumanInput.leftJoystick.getRawAxis(1) * -1; // reverse for front orientation
     return 0;
   }
 
   public double getRightJoysick() {
-    if (HumanInput.rightJoystick.getRawAxis(1) > .1)
-      return HumanInput.rightJoystick.getRawAxis(1);
+    if (Math.abs(HumanInput.rightJoystick.getRawAxis(1)) > .1)
+      return HumanInput.rightJoystick.getRawAxis(1) * -1; // reverse for front orientation
     return 0;
   }
 
